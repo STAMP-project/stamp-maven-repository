@@ -80,7 +80,7 @@
                     <outputDirectory>${project.build.directory}/master</outputDirectory> <!-- matches distribution management repository url above -->
                     <branch>refs/heads/master</branch>                       <!-- remote branch name -->
                     <includes><include>**/*</include></includes>
-                    <excludes><exclude>*jar-with-dependencies.jar</exclude></excludes>
+                    <excludes><exclude>target/*jar-with-dependencies.jar</exclude></excludes>
                     <repositoryName>stamp-maven-repository</repositoryName>      <!-- github repo name -->
                     <repositoryOwner>STAMP-project</repositoryOwner>    <!-- github username  -->
                 </configuration>
