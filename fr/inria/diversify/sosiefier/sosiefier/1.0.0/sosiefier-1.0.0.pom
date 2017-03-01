@@ -27,7 +27,8 @@
         <dependency>
             <groupId>fr.inria.gforge.spoon</groupId>
             <artifactId>spoon-core</artifactId>
-            <version>5.1.1</version>
+            <!--<version>5.1.1</version>-->
+            <version>5.5.0</version>
         </dependency>
 
         <dependency>
@@ -69,6 +70,32 @@
             </plugin>
 
             <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.11</version>
+                <configuration>
+                    <path>${project.distributionManagement.site.url}</path>
+                    <merge>true</merge>
+                    <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+                    <outputDirectory>${project.build.directory}/master</outputDirectory> <!-- matches distribution management repository url above -->
+                    <branch>refs/heads/master</branch>                       <!-- remote branch name -->
+                    <includes><include>**/*</include></includes>
+                    <excludes><exclude>*jar-with-dependencies.jar</exclude></excludes>
+                    <repositoryName>stamp-maven-repository</repositoryName>      <!-- github repo name -->
+                    <repositoryOwner>STAMP-project</repositoryOwner>    <!-- github username  -->
+                </configuration>
+                <executions>
+                    <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
@@ -90,32 +117,6 @@
                         <exclude>**/oldTests/**</exclude>
                     </excludes>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>com.github.github</groupId>
-                <artifactId>site-maven-plugin</artifactId>
-                <version>0.11</version>
-                <configuration>
-                    <path>${project.distributionManagement.site.url}</path>
-                    <merge>true</merge>
-                    <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
-                    <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-                    <outputDirectory>${project.build.directory}/master</outputDirectory> <!-- matches distribution management repository url above -->
-                    <branch>refs/heads/master</branch>                       <!-- remote branch name -->
-                    <includes><include>**/*</include></includes>
-                    <repositoryName>stamp-maven-repository</repositoryName>      <!-- github repo name -->
-                    <repositoryOwner>STAMP-project</repositoryOwner>    <!-- github username  -->
-                </configuration>
-                <executions>
-                    <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
-                    <execution>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                    </execution>
-                </executions>
             </plugin>
 
         </plugins>
