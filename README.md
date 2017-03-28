@@ -25,3 +25,12 @@
   <version>1.0.0</version>
 </dependency>
  ```
+
+  * [pitest-descartes](https://github.com/STAMP-project/pitest-descartes)
+```
+<dependency>
+  <groupId>fr.inria.stamp</groupId>
+  <artifactId>descartes</artifactId>
+  <version>0.1-SNAPSHOT</version>
+</dependency>
+```
