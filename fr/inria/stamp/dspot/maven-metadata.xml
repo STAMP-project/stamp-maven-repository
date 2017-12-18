@@ -3,10 +3,10 @@
   <groupId>fr.inria.stamp</groupId>
   <artifactId>dspot</artifactId>
   <versioning>
-    <release>1.0.3</release>
+    <release>{$project.version}</release>
     <versions>
-      <version>1.0.3</version>
+      <version>{$project.version}</version>
     </versions>
-    <lastUpdated>20171211223558</lastUpdated>
+    <lastUpdated>20171218100814</lastUpdated>
   </versioning>
 </metadata>
