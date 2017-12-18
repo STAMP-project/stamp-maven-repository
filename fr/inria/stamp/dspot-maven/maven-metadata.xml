@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>fr.inria.stamp</groupId>
+  <artifactId>dspot-maven</artifactId>
+  <versioning>
+    <latest>{$project.version}</latest>
+    <release>{$project.version}</release>
+    <versions>
+      <version>{$project.version}</version>
+    </versions>
+    <lastUpdated>20171218100825</lastUpdated>
+  </versioning>
+</metadata>
