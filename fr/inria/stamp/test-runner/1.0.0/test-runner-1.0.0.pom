@@ -125,9 +125,6 @@
                     <includes>
                         <include>**/*</include>
                     </includes>
-                    <excludes>
-                        <exclude>**/*jar-with-dependencies.jar</exclude>
-                    </excludes>
                     <repositoryName>stamp-maven-repository</repositoryName>
                     <repositoryOwner>STAMP-project</repositoryOwner>
                 </configuration>
